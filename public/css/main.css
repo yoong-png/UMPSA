@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", "consolas", sans-serif;
+    font-weight: 400;
+  }
+  
+
+  body {
+    font-family: "Inter", "consolas", sans-serif;
+    background-color: #fff;
+    color: #333;
+    line-height: 1.6;
+  }

@@ -1,0 +1,287 @@
+body {
+    margin: 0;
+    background: linear-gradient(to bottom, #EFF5FF, #C7DEFF, #98C2FF, #AFC9EF);
+    color: #333;
+}
+
+#navbar {
+    color: black;
+    font-size: 20px;
+}
+
+#navbar .a1 {
+    position: absolute;
+    top: 67px;
+    left: 5.54%;
+}
+
+#navbar .a2 {
+    position: absolute;
+    top: 67px;
+    right: 16%;
+}
+
+#navbar .a2 button {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#navbar .a3 {
+    position: absolute;
+    top: 59px;
+    left: 85%;
+    font-size: 16px;
+}
+
+#navbar .a3 button {
+    background: black;
+    border: 2px solid black;
+    border-radius: 6px;
+    padding: 10px 10px;
+    font: inherit;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Full viewport height */
+  text-align: center;
+  padding: 20px;
+}
+
+
+.hero .form-bg-image {
+    width: 60%;
+    height: auto;
+}
+
+.hero p {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 500px;
+    font-size: 24px; /* 1.5em */
+    margin: 8px 0;    /* 0.5em */
+    color: #E3AE31;
+}
+
+.hero .button-link {
+  display: inline-block; /* Make it behave like a button */
+  background-color: #ff6600;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  margin: 20px auto 0 auto; /* Center horizontally */
+}
+
+.feature1 {
+  margin: 40px 0 40px 5%;
+  padding: 20px;
+  max-width: 649px;
+  text-align: left;
+}
+
+.feature1 h2 {
+  font-size: 40px;
+  color: #ED6C4F;
+  margin-bottom: 20px;
+}
+
+.feature1 p {
+  font-size: 30px;
+  color: white;
+  line-height: 1.5;
+}
+
+.feature1 .oneflower {
+  position: absolute;
+  width: 450px;
+  height: auto;
+  left: 57%;
+  top: 920px;
+}
+
+
+.feature2 {
+  margin: 40px 5% 40px auto;
+  padding: 20px;
+  max-width: 850px;
+  text-align: right;
+}
+
+.feature2 h2 {
+  font-size: 40px;
+  color: #ED6C4F;
+  margin-bottom: 20px;
+}
+
+.feature2 p {
+  font-size: 30px;
+  color: white;
+  line-height: 1.5;
+}
+
+.feature2 .twoflower {
+  position: absolute;
+  width: 180px;
+  height: auto;
+  left: 8%;
+  top: 1400px;
+}
+
+.feature2 .threeflower {
+  position: absolute;
+  width: 300px;
+  height: auto;
+  left: 18%;
+  top: 1450px;
+}
+
+
+.feature3 {
+  margin: 40px 0 40px 5%;
+  padding: 20px;
+  max-width: 649px;
+  text-align: left;
+}
+
+.feature3 h2 {
+  font-size: 40px;
+  color: #ED6C4F;
+  margin-bottom: 20px;
+}
+
+.feature3 p {
+  font-size: 30px;
+  color: white;
+  line-height: 1.5;
+}
+
+.feature3 .standwithdrinks {
+  position: absolute;
+  width: 350px;
+  height: auto;
+  left: 62%;
+  top: 1800px;
+}
+
+.study-with {
+    margin: 150px 0 40px 0;  /* no left margin */
+    text-align: center;       /* center text + images container */
+    padding: 40px 20px;
+}
+
+
+.study-with h2 {
+    font-size: 50px; /* 2em */
+    margin-bottom: 20px;
+    font-weight: bolder;
+}
+
+.study-with .images {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 70px;
+}
+
+.study-with .images .image-container {
+  display: flex;
+  flex-direction: column;  /* stack img and caption vertically */
+  align-items: center;     /* center them horizontally */
+  max-width: 45%;          /* keep image max width */
+}
+
+.study-with .images img {
+  height: 300px;    /* fixed height */
+  width: auto;
+  border-radius: 8px;
+  object-fit: cover;  /* scales image to fill area nicely */
+}
+
+.study-with .images .caption {
+  margin-top: 8px;
+  font-size: 24px;
+  color: black;  /* or any color you want */
+  text-align: center;
+}
+
+.testimonials {
+    background: none;
+    text-align: center;
+    margin-top: 200px;
+}
+
+.testimonials h2 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    font-weight: bolder;
+    text-align: left;
+    margin-left: 5%;
+}
+
+.testimoniall {
+    width: 95%;
+    margin: 100px auto 20px auto;
+    margin-bottom: 345px;
+}
+
+.one {
+  position: absolute;
+  top: 3000px;
+  width: 100vw;
+  height: 304px;
+  object-fit: cover;
+  display: block;
+  object-position: center;
+  z-index: -2;
+}
+
+.two {
+  position: absolute;
+  top: 3080px;
+  width: 100vw;
+  height: 409px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  z-index: -2;
+}
+
+.three {
+  position: absolute;
+  top: 3380px;
+  width: 100vw;
+  height: 304px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  z-index: -2;
+}
+
+.four {
+  position: absolute;
+  top: 3620px;
+  width: 100vw;
+  height: 304px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  z-index: -2;
+}
+
+
+

@@ -1,0 +1,101 @@
+/* sign up.css */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #FCF2CA;
+}
+
+#navbar {
+    padding: 20px;
+}
+
+.a1 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 30px;
+}
+
+h1 {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 100px; /* pushes the Sign Up heading down */
+  margin-bottom: 0px; /* spacing below */
+  position: relative; /* keep it as is */
+}
+
+
+
+form#signupForm {
+    max-width: 90vw;
+    width: 400px;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;;
+    padding: 60px 40px;
+    border-radius: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+form#signupForm .form-bg-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    max-height: 100%;
+    opacity: 50%;
+    object-fit: contain;
+    pointer-events: none;  /* so clicks pass through to inputs */
+    z-index: -1;  /* behind the form content */
+}
+
+form#signupForm label {
+  position: absolute; /* take out of flow */
+  width: 1px;         /* tiny */
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+form#signupForm h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form#signupForm div {
+    margin-bottom: 15px;
+}
+
+form#signupForm label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form#signupForm input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+form#signupForm button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4d4032;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+form#signupForm button:hover {
+    background-color: #3b3229;
+}

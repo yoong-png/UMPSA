@@ -1,0 +1,116 @@
+/* login.css */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #FCF2CA;
+}
+
+#navbar {
+    padding: 20px;
+}
+
+.a1 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 30px;
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 120px; /* pushes the Login heading down */
+    margin-bottom: 0px;
+    position: relative;
+}
+
+form#loginForm {
+    max-width: 90vw;
+    width: 400px;
+    margin: auto;
+    padding: 113px 40px;
+    border-radius: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+h2{
+    text-align: center;
+    font-size: 12px;
+    margin-top: 10px; 
+    margin-bottom: 0px;
+    position: relative;
+}
+
+#loginForm #register {
+  text-align: center;
+}
+
+#loginForm #register button {
+    width: 70px;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 4px;
+    background-color: #8f8273;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin: auto;
+}
+
+
+form#loginForm .form-bg-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    opacity: 50%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+form#loginForm label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
+form#loginForm h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form#loginForm div {
+    margin-bottom: 15px;
+}
+
+form#loginForm input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+form#loginForm button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4d4032;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+form#loginForm button:hover {
+    background-color: #3b3229;
+}

@@ -1,0 +1,593 @@
+
+#Box1 {
+    top: 0px;
+    width: 100%;
+    height: 720px;
+    overflow: hidden;
+    position: absolute;
+    z-index: -2;
+}
+.dim {
+    top: 0px;
+    width: 100%;
+    height: 720px;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.35);
+    z-index: -1;
+}
+#Box1 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+#navbar{
+  color: white;
+  font-size: 20px;
+}
+#navbar .a1{
+  position: absolute;
+  top: 67px;
+  left: 5.54%;
+}
+#navbar .a2{
+  position: absolute;
+  top: 67px;
+  right: 16%;
+}
+#navbar .a2 button {
+  background: none;  
+  border: none;      
+  padding: 0;        
+  font: inherit;      
+  color: inherit;     
+  text-decoration: none;  
+  cursor: pointer;    
+}
+#navbar .a3{
+  position: absolute;
+  top: 59px;
+  left: 85%;
+  font-size: 16px;
+}
+#navbar .a3 button {
+  background: none;
+  border: 2px solid white;
+  border-radius: 6px;
+  padding: 10px 10px;
+  font: inherit;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;    
+}
+
+
+
+#b1{
+  color:white;
+  position: relative;
+  top: 290px;
+  display: flex;
+  align-items: center;     
+  justify-content: center;
+  flex-direction: column;
+}
+#b1 .line1{  
+  height: 120px;
+  font-size: 64px;
+  font-weight: bold;
+}
+#b1 .line2{
+  font-size: 24px;
+  font-family: "inter", "consolas", sans-serif;
+}
+
+
+.competition{
+  height: 950px;
+}
+
+
+#z1{
+  position: relative;
+  top: 108px;
+  left: 5.61%;
+}
+#z1 .line1{
+  font-weight: 600;
+  font-size: 40px;
+}
+#z1 .line2{
+  font-size: 24px;
+  color: #B0A96B;
+}
+#z1 .but1, #z1 .but2 {
+  display: inline-block;
+  margin-right: 10px;
+  position: relative;
+  top: 20px;
+}
+#z1 .but1{
+  position: relative;
+  color: white;
+  font-size: 24px;
+}
+#z1 .but1 button{
+  background: black;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 30px;
+  font: inherit;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;   
+}
+#z1 .but2{
+  position: relative;
+  font-weight: 500;
+  font-size: 24px;
+}
+#z1 .but2 button{
+  background: #E6E6E6;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 30px;
+  font: inherit;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;   
+}
+#z1 #UMPSA{
+  position: absolute;
+  top: -100px;
+  left: 46%;
+  height: 400px;
+  width: 624px;
+}
+#z1 #UMPSA img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+#z2{
+  position: relative;
+  top: 320px;
+  left: 57.55%;
+}
+#z2 .line1{
+  font-weight: 600;
+  font-size: 40px;
+}
+#z2 .line2{
+  font-size: 24px;
+  color: #B0A96B;
+}
+#z2 .but1, #z2 .but2 {
+  display: inline-block;
+  margin-right: 10px;
+  position: relative;
+  top: 20px;
+}
+#z2 .but1{
+  position: relative;
+  color: white;
+  font-size: 24px;
+}
+#z2 .but1 button{
+  background: black;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 30px;
+  font: inherit;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;   
+}
+#z2 .but2{
+  position: relative;
+  font-weight: 500;
+  font-size: 24px;
+}
+#z2 .but2 button{
+  background: #E6E6E6;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 30px;
+  font: inherit;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;   
+}
+#z2 #UM{
+  position: absolute;
+  top: -100px;
+  left: -50%;
+  height: 400px;
+  width: 625px;
+}
+#z2 #UM img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.competition .but3{
+  position: relative;
+  top: 400px;
+}
+.competition .but3 button{
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  font-size: 24px;
+  width: 92vw;
+  background: #D9D9D9;
+  border: none;
+  border-radius: 6px;
+  padding: 5px;
+  text-decoration: none;
+  cursor: pointer;  
+}
+
+
+
+.workshop{
+  position: relative;
+  height: 950px;
+}
+
+
+#y1 {
+  position: relative;
+  top: 80px;
+  left: 5.61%;
+}
+#y1 .line1 {
+  font-weight: 600;
+  font-size: 40px;
+}
+#y1 .line2 {
+  font-size: 24px;
+  color: #B0A96B;
+}
+#y1 .but1, #y1 .but2 {
+  display: inline-block;
+  margin-right: 10px;
+  position: relative;
+  top: 20px;
+}
+#y1 .but1 {
+  position: relative;
+  color: white;
+  font-size: 24px;
+}
+#y1 .but1 button {
+  background: black;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 30px;
+  font: inherit;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;   
+}
+#y1 .but2 {
+  position: relative;
+  font-weight: 500;
+  font-size: 24px;
+}
+#y1 .but2 button {
+  background: #E6E6E6;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 30px;
+  font: inherit;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;   
+}
+#y1 #IMU{
+  position: absolute;
+  top: -50px;
+  left: 46%;
+  height: 400px;
+  width: 624px;
+}
+#y1 #IMU img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+#y2 {
+  position: relative;
+  top: 250px;
+  left: 57.55%;
+}
+#y2 .line1 {
+  font-weight: 600;
+  font-size: 40px;
+}
+#y2 .line2 {
+  font-size: 24px;
+  color: #B0A96B;
+}
+#y2 .but1, #y2 .but2 {
+  display: inline-block;
+  margin-right: 10px;
+  position: relative;
+  top: 20px;
+}
+#y2 .but1 {
+  position: relative;
+  color: white;
+  font-size: 24px;
+}
+#y2 .but1 button {
+  background: black;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 30px;
+  font: inherit;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;   
+}
+#y2 .but2 {
+  position: relative;
+  font-weight: 500;
+  font-size: 24
+}
+#y2 #KLESF{
+  position: absolute;
+  top: -80px;
+  left: -50%;
+  height: 400px;
+  width: 625px;
+}
+#y2 #KLESF img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.workshop .but3 {
+  position: relative;
+  top: 320px;
+}
+
+.workshop .but3 button {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  font-size: 24px;
+  width: 92vw;
+  background: #D9D9D9;
+  border: none;
+  border-radius: 6px;
+  padding: 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.scholarship {
+  position: relative;
+  height: 950px;
+}
+
+#x1 {
+  position: relative;
+  top: 80px;
+  left: 5.61%;
+}
+#x1 .line1 {
+  font-weight: 600;
+  font-size: 40px;
+}
+#x1 .line2 {
+  font-size: 24px;
+  color: #B0A96B;
+}
+#x1 .but1, #x1 .but2 {
+  display: inline-block;
+  margin-right: 10px;
+  position: relative;
+  top: 20px;
+}
+#x1 .but1 {
+  position: relative;
+  color: white;
+  font-size: 24px;
+}
+#x1 .but1 button {
+  background: black;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 30px;
+  font: inherit;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;   
+}
+#x1 .but2 {
+  position: relative;
+  font-weight: 500;
+  font-size: 24px;
+}
+#x1 .but2 button {
+  background: #E6E6E6;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 30px;
+  font: inherit;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;   
+}
+#x1 #JPA{
+  position: absolute;
+  top: -80px;
+  left: 46%;
+  height: 400px;
+  width: 624px;
+}
+#x1 #JPA img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#x2 {
+  position: relative;
+  top: 250px;
+  left: 57.55%;
+}
+#x2 .line1 {
+  font-weight: 600;
+  font-size: 40px;
+}
+#x2 .line2 {
+  font-size: 24px;
+  color: #B0A96B;
+}
+#x2 .but1, #x2 .but2 {
+  display: inline-block;
+  margin-right: 10px;
+  position: relative;
+  top: 20px;
+}
+#x2 .but1 {
+  position: relative;
+  color: white;
+  font-size: 24px;
+}
+#x2 .but1 button {
+  background: black;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 30px;
+  font: inherit;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;   
+}
+#x2 .but2 {
+  position: relative;
+  font-weight: 500;
+  font-size: 24px;
+}
+#x2 .but2 button {
+  background: #E6E6E6;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 30px;
+  font: inherit;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;   
+}
+#x2 #MARA{
+  position: absolute;
+  top: -80px;
+  left: -50%;
+  height: 400px;
+  width: 625px;
+}
+#x2 #MARA img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.scholarship .but3 {
+  position: relative;
+  top: 320px;
+}
+
+.scholarship .but3 button {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  font-size: 24px;
+  width: 92vw;
+  background: #D9D9D9;
+  border: none;
+  border-radius: 6px;
+  padding: 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+.site-footer {
+  background-color: #fff;
+  padding: 40px;
+  border-top: 1px solid #ccc;
+  position: relative;
+  top: 600px;
+}
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.footer-brand {
+  flex: 1;
+  min-width: 250px;
+}
+.footer-brand h2 {
+  margin-bottom: 10px;
+}
+.social-icons a {
+  position: relative;
+  top: 60px;
+  margin-right: 10px;
+}
+.fa-facebook, .fa-linkedin, .fa-youtube, .fa-instagram{
+  color: #828282;
+  height: 40px;
+  width: 40px;
+}
+.footer-links {
+  display: flex;
+  flex: 0.8;
+  justify-content: space-between;
+  min-width: 400px;
+  position: relative;
+  right: 2%;
+}
+.footer-links h4 {
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+.footer-links button {
+  display: block;
+  margin-bottom: -20px;
+  padding: 8px 5px;
+  background: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+}
+
+
+
+
+
+
+#page-content {
+  top: 600px;
+  position:relative
+}
