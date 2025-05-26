@@ -1,6 +1,6 @@
 body {
-  background-color: #f8f0cd; /* or any color you like */
-  margin: 0; /* optional, to remove default spacing */
+  background-color: #f8f0cd; 
+  margin: 0; 
 }
 
 
@@ -28,7 +28,6 @@ body {
     font-size: 16px;
 }
 
-/* Style all the <a> tags to match buttons */
 #navbar .button-link {
     background: none;
     border: none;
@@ -39,7 +38,6 @@ body {
     cursor: pointer;
 }
 
-/* Special styling for the button in .a3 */
 #navbar .a3 .button-link {
     background: black;
     border: 2px solid black;
@@ -61,7 +59,7 @@ body {
 .note {
     display: block;
     position: relative;
-    margin: 200px auto 0 auto; /* top margin 200px, auto left/right for centering */
+    margin: 200px auto 0 auto; 
     width: 50%;
     height: auto;
     border-radius: 16px;
@@ -128,11 +126,11 @@ body {
     width: 100%;
     text-decoration: none;
     color: inherit;
-    font-size: 14px;         /* Adjust as needed */
+    font-size: 14px;         
     font-family: inherit;
     line-height: 1.5;
 }
 
 .footer-links a:hover {
-    background-color: rgba(0, 0, 0, 0.05); /* optional hover effect */
+    background-color: rgba(0, 0, 0, 0.05); 
 }

@@ -528,6 +528,7 @@ class ComposerStaticInit88970a0117c062eed55fa8728fc43833
         'App\\Http\\Controllers\\NoteController' => __DIR__ . '/../..' . '/app/Http/Controllers/NoteController.php',
         'App\\Http\\Controllers\\QuizController' => __DIR__ . '/../..' . '/app/Http/Controllers/QuizController.php',
         'App\\Http\\Controllers\\RewardsController' => __DIR__ . '/../..' . '/app/Http/Controllers/RewardsController.php',
+        'App\\Http\\Controllers\\SignupController' => __DIR__ . '/../..' . '/app/Http/Controllers/SignupController.php',
         'App\\Http\\Controllers\\StudySpaceController' => __DIR__ . '/../..' . '/app/Http/Controllers/StudySpaceController.php',
         'App\\Models\\Call' => __DIR__ . '/../..' . '/app/Models/Call.php',
         'App\\Models\\CallInvite' => __DIR__ . '/../..' . '/app/Models/CallInvite.php',

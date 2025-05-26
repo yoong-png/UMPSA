@@ -10,23 +10,23 @@
 </head>
 <body>
 
-<header>
-    <div id="navbar">
-    <div class="a1"> 
-        <a href="{{ route('dashboard') }}" class="button-link">LemonAid Study</a>
-        </div>
+    <header>
+      <div id="navbar">
+      <div class="a1"> 
+          <a href="{{ route('dashboard') }}" class="button-link">LemonAid Study</a>
+      </div>
 
-    <div class="a2">
-        <a href="{{ route('leaderboard') }}" class="button-link">Leaderboard</a>
-        <a href="{{ route('weekly.challenge') }}" class="button-link">Weekly Challenge</a>
-        <a href="{{ route('rewards') }}" class="button-link">Rewards</a>
-    </div>
+      <div class="a2">
+          <a href="{{ route('leaderboard') }}" class="button-link">Leaderboard |</a>
+          <a href="{{ route('weekly.challenge') }}" class="button-link"> Weekly Challenge </a>
+          <a href="{{ route('rewards') }}" class="button-link">| Rewards</a>
+      </div>
 
-    <div class="a3">
-        <a href="{{ route('study.space') }}" class="button-link">LemonAid Study Space</a>
-    </div>
-    </div>
-</header>
+      <div class="a3">
+          <a href="{{ route('study.space') }}" class="button-link">LemonAid Study Space</a>
+      </div>
+      </div>
+    </header>
 
   <div class="quiz">
     <img src="images/Flower.png" alt="Flower decoration" class="form-bg-image" />
@@ -65,7 +65,6 @@
 
         const selected = button.value;
 
-        // Highlight correct/incorrect locally
         if (selected === correctAnswer) {
         button.classList.add('correct');
         feedback.textContent = '✅ Correct!';
@@ -76,7 +75,6 @@
         feedback.style.color = 'red';
         }
 
-        // ✅ Send to backend
         fetch("{{ route('quiz.submit') }}", {
         method: "POST",
         headers: {
@@ -104,46 +102,38 @@
 
 
     <footer class="site-footer">
-    <div class="footer-top">
-        <div class="footer-brand">
-        <h2>LemonAid Study</h2>
-        <div class="social-icons">
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="#"><i class="fa-brands fa-youtube"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-        </div>
-        </div>
-        <div class="footer-links">
-        <div>
+   <div class="footer-top">
+      <div class="footer-brand">
+       <h2>LemonAid Study</h2>
+       <div class="social-icons">
+           <a href="#"><i class="fa-brands fa-facebook"></i></a>
+           <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+           <a href="#"><i class="fa-brands fa-youtube"></i></a>
+           <a href="#"><i class="fa-brands fa-instagram"></i></a>
+       </div>
+       </div>
+       <div class="footer-links">
+          <div>
             <h4>Forum</h4>
-            <a href="{{ route('discuss') }}">
-                <button>Discussion Forum</button>
-            </a><br>
-            <a href="{{ route('info') }}">
-                <button>Information Forum</button>
-            </a><br>
-        </div>
-        <div>
+            <a href="{{ route('discuss') }}" class="footer-button">Discussion Forum</a><br>
+            <a href="{{ route('info') }}" class="footer-button">Information Forum</a><br>
+          </div>
+          <div>
             <h4>Study with Friends</h4>
-            <a href="{{ route('study.space') }}">
-                <button>Your Friends</button>
-            </a><br>
-            <button>Public Space</button>
+            <a href="{{ route('study.space') }}" class="footer-button">Your Friends</a><br>
+            <a href="#" class="footer-button">Public Space</a><br>
+          </div>
+          <div>
+            <h4>Study Materials</h4>
+            <a href="#" class="footer-button">Textbooks</a><br>
+            <a href="{{ route('note') }}" class="footer-button">Chapter Notes</a><br>
+            <a href="{{ route('quiz') }}" class="footer-button underline">Quiz</a><br>
+          </div>
         </div>
-        <div>
-            <h4>Study materials</h4>
-            <button>Textbooks</button><br>
-            <a href="{{ route('note') }}">
-                <button>Chapter Notes</button>
-            </a><br>
-            <a href="{{ route('quiz') }}">
-                <button style="text-decoration: underline;">Quiz</button>
-            </a><br>
-        </div>
-        </div>
+
+       </div>
     </div>
-    </footer>
+</footer>
 
 </body>
 </html>

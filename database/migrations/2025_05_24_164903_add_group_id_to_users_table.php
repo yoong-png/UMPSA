@@ -6,18 +6,17 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    
-    public function up()
-{
-    Schema::table('users', function (Blueprint $table) {
-        $table->string('group_id')->nullable(); // or integer
-    });
-}
+    public function up(): void
+    {
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('group_id')->nullable()->after('points');
+        });
+    }
 
     public function down(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+            $table->dropColumn('group_id');
         });
     }
 };

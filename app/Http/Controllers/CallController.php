@@ -67,7 +67,9 @@ class CallController extends Controller
         // Join new call
         $call->users()->attach($user->id);
 
-        return response()->json(['message' => 'Joined call', 'users' => $call->users]);
+        return response()->json([
+    'message' => 'Joined call',
+    'users' => $call->users()->get() ]);
     }
 
     public function leave(Call $call)

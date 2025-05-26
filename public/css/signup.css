@@ -1,4 +1,4 @@
-/* sign up.css */
+
 body {
     margin: 0;
     padding: 0;
@@ -18,9 +18,9 @@ body {
 h1 {
   text-align: center;
   font-weight: bold;
-  margin-top: 100px; /* pushes the Sign Up heading down */
-  margin-bottom: 0px; /* spacing below */
-  position: relative; /* keep it as is */
+  margin-top: 100px; 
+  margin-bottom: 0px; 
+  position: relative; 
 }
 
 
@@ -46,13 +46,13 @@ form#signupForm .form-bg-image {
     max-height: 100%;
     opacity: 50%;
     object-fit: contain;
-    pointer-events: none;  /* so clicks pass through to inputs */
-    z-index: -1;  /* behind the form content */
+    pointer-events: none;  
+    z-index: -1;  
 }
 
 form#signupForm label {
-  position: absolute; /* take out of flow */
-  width: 1px;         /* tiny */
+  position: absolute; 
+  width: 1px;         
   height: 1px;
   padding: 0;
   margin: -1px;

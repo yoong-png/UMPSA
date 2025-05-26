@@ -1,0 +1,138 @@
+body {
+    margin: 0;
+    background: white;
+    color: #333;
+}
+
+
+#navbar {
+    color: black;
+    font-size: 20px;
+}
+
+#navbar .a1 {
+    position: absolute;
+    top: 67px;
+    left: 5.54%;
+}
+
+#navbar .a2 {
+    position: absolute;
+    top: 67px;
+    right: 16%;
+}
+
+#navbar .a3 {
+    position: absolute;
+    top: 70px;
+    left: 85%;
+    font-size: 16px;
+}
+
+#navbar .button-link {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#navbar .a3 .button-link {
+    background: black;
+    border: 2px solid black;
+    border-radius: 6px;
+    padding: 10px 10px;
+    color: white;
+}
+
+.bg {
+  width: 100%;
+  height: auto;
+  top: 164px;
+  position: relative;
+  z-index: -1;
+}
+
+.caption {
+    position: absolute;
+    top: 200px;
+    left: 5%;
+}
+
+.d1 {
+    position: absolute;
+    max-width: 100%;
+    top: 400px;
+    left: 15%;
+}
+
+.site-footer {
+    background-color: none;
+    padding: 40px;
+    border-top: 1px solid #ccc;
+    position: relative;
+    margin-top: 10.2%;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-brand {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-brand h2 {
+    margin-bottom: 10px;
+}
+
+.social-icons a {
+    position: relative;
+    top: 60px;
+    margin-right: 10px;
+}
+
+.fa-facebook, .fa-linkedin, .fa-youtube, .fa-instagram {
+    color: #828282;
+    height: 40px;
+    width: 40px;
+}
+
+.footer-links {
+    display: flex;
+    flex: 0.8;
+    justify-content: space-between;
+    min-width: 400px;
+    position: relative;
+    right: 2%;
+}
+
+.footer-links h4 {
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.footer-links a {
+    display: block;
+    margin-bottom: -20px;
+    padding: 8px 5px;
+    background: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    text-decoration: none;
+    color: inherit;
+    font-size: 14px;         
+    font-family: inherit;
+    line-height: 1.5;
+}
+
+.footer-links a:hover {
+    background-color: rgba(0, 0, 0, 0.05); }

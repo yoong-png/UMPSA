@@ -8,44 +8,13 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\LeaderboardController;
+
 
 Route::get('/ping', function () {
     return response()->json(['message' => 'pong']);
 });
 
-Route::post('/signup', function (Request $request) {
-    $validator = Validator::make($request->all(), [
-        'name' => 'required|string|max:255',
-        'email' => 'required|email|unique:users,email',
-        'password' => 'required|string|min:6|confirmed',
-    ]);
-
-    if ($validator->fails()) {
-        return response()->json(['errors' => $validator->errors()], 422);
-    }
-
-    $emailDomain = substr(strrchr($request->email, "@"), 1);
-    $domain = strtolower(trim($emailDomain));
-    $isTeacher = str_ends_with($domain, 'school.edu.my');
-
-    $user = \App\Models\User::create([
-        'name' => $request->name,
-        'email' => $request->email,
-        'password' => \Illuminate\Support\Facades\Hash::make($request->password),
-        'role' => $isTeacher ? 'teacher' : 'student',
-        'points' => 0,
-    ]);
-
-    return response()->json([
-        'message' => 'User registered successfully',
-        'user' => [
-            'id' => $user->id,
-            'name' => $user->name,
-            'email' => $user->email,
-            'role' => $user->role,
-        ],
-    ]);
-});
 
 
 Route::get('/allusers', function () {
@@ -123,33 +92,6 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 });
 
-
-Route::get('/leaderboard', function () {
-    $users = User::orderByDesc('points')->get()->map(function ($user, $index) {
-        return [
-            'rank' => $index + 1,
-            'name' => $user->name,
-            'email' => $user->email,
-            'points' => $user->points,
-        ];
-    });
-
-    return response()->json($users);
-});
-
-
-Route::get('/leaderboard/{group}', function ($group) {
-    $users = User::where('group_id', $group)
-        ->orderByDesc('points')
-        ->get()
-        ->map(function ($user, $index) {
-            return [
-                'name' => $user->name,
-                'email' => $user->email,
-                'points' => $user->points,
-                'rank' => $index + 1
-            ];
-        });
-
-    return response()->json($users);
-});
+Route::get('/leaderboard', [LeaderboardController::class, 'allUsers']);
+Route::get('/leaderboard/{group}', [LeaderboardController::class, 'groupUsers']);
+Route::get('/leaderboard-groups', [LeaderboardController::class, 'groupTotals']);

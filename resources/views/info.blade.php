@@ -16,16 +16,14 @@
 
 <header>
     <div id="navbar">
-        <div class="a1">LemonAid Study</div>
-        <div class="a2">
-        <div class="a1"> 
+    <div class="a1"> 
         <a href="{{ route('dashboard') }}" class="button-link">LemonAid Study</a>
-        </div>
+    </div>
 
     <div class="a2">
-        <a href="{{ route('leaderboard') }}" class="button-link">Leaderboard</a>
-        <a href="{{ route('weekly.challenge') }}" class="button-link">Weekly Challenge</a>
-        <a href="{{ route('rewards') }}" class="button-link">Rewards</a>
+        <a href="{{ route('leaderboard') }}" class="button-link">Leaderboard |</a>
+        <a href="{{ route('weekly.challenge') }}" class="button-link"> Weekly Challenge </a>
+        <a href="{{ route('rewards') }}" class="button-link">| Rewards</a>
     </div>
 
     <div class="a3">
@@ -149,32 +147,24 @@
        </div>
        </div>
        <div class="footer-links">
-       <div>
-           <h4>Forum</h4>
-           <a href="{{ route('discuss') }}">
-               <button>Discussion Forum</button>
-           </a><br>
-           <a href="{{ route('info') }}">
-               <button>Information Forum</button>
-           </a><br>
-       </div>
-       <div>
-           <h4>Study with Friends</h4>
-           <a href="{{ route('study.space') }}">
-               <button>Your Friends</button>
-           </a><br>
-           <button>Public Space</button>
-       </div>
-       <div>
-           <h4>Study materials</h4>
-           <button>Textbooks</button><br>
-           <a href="{{ route('note') }}">
-               <button>Chapter Notes</button>
-           </a><br>
-           <a href="{{ route('quiz') }}">
-               <button style="text-decoration: underline;">Quiz</button>
-           </a><br>
-       </div>
+          <div>
+            <h4>Forum</h4>
+            <a href="{{ route('discuss') }}" class="footer-button">Discussion Forum</a><br>
+            <a href="{{ route('info') }}" class="footer-button">Information Forum</a><br>
+          </div>
+          <div>
+            <h4>Study with Friends</h4>
+            <a href="{{ route('study.space') }}" class="footer-button">Your Friends</a><br>
+            <a href="#" class="footer-button">Public Space</a><br>
+          </div>
+          <div>
+            <h4>Study Materials</h4>
+            <a href="#" class="footer-button">Textbooks</a><br>
+            <a href="{{ route('note') }}" class="footer-button">Chapter Notes</a><br>
+            <a href="{{ route('quiz') }}" class="footer-button underline">Quiz</a><br>
+          </div>
+        </div>
+
        </div>
     </div>
 </footer>

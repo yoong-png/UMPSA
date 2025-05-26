@@ -23,46 +23,52 @@
 
 
 
-#navbar{
-  color: white;
-  font-size: 20px;
-}
-#navbar .a1{
-  position: absolute;
-  top: 67px;
-  left: 5.54%;
-}
-#navbar .a2{
-  position: absolute;
-  top: 67px;
-  right: 16%;
-}
-#navbar .a2 button {
-  background: none;  
-  border: none;      
-  padding: 0;        
-  font: inherit;      
-  color: inherit;     
-  text-decoration: none;  
-  cursor: pointer;    
-}
-#navbar .a3{
-  position: absolute;
-  top: 59px;
-  left: 85%;
-  font-size: 16px;
-}
-#navbar .a3 button {
-  background: none;
-  border: 2px solid white;
-  border-radius: 6px;
-  padding: 10px 10px;
-  font: inherit;
-  color: inherit;
-  text-decoration: none;
-  cursor: pointer;    
+#navbar {
+    color: white;
+    font-size: 20px;
 }
 
+#navbar .a1 {
+    position: absolute;
+    top: 67px;
+    left: 5.54%;
+}
+
+#navbar .a2 {
+    position: absolute;
+    top: 67px;
+    right: 16%;
+}
+
+#navbar .a3 {
+    position: absolute;
+    top: 70px;
+    left: 85%;
+    font-size: 16px;
+}
+
+#navbar .button-link {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#navbar .a3 .button-link {
+    background: white;
+    border: 2px solid white;
+    border-radius: 6px;
+    padding: 10px 10px;
+    color: black;
+}
+
+#page-content {
+  position: relative;
+  top: 720px;
+}
 
 
 #b1{
@@ -530,64 +536,71 @@
 
 
 .site-footer {
-  background-color: #fff;
-  padding: 40px;
-  border-top: 1px solid #ccc;
-  position: relative;
-  top: 600px;
+    background-color: none;
+    padding: 40px;
+    border-top: 1px solid #ccc;
+    position: relative;
+    top: 800px;
 }
+
 .footer-top {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
+
 .footer-brand {
-  flex: 1;
-  min-width: 250px;
+    flex: 1;
+    min-width: 250px;
 }
+
 .footer-brand h2 {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
+
 .social-icons a {
-  position: relative;
-  top: 60px;
-  margin-right: 10px;
+    position: relative;
+    top: 60px;
+    margin-right: 10px;
 }
-.fa-facebook, .fa-linkedin, .fa-youtube, .fa-instagram{
-  color: #828282;
-  height: 40px;
-  width: 40px;
+
+.fa-facebook, .fa-linkedin, .fa-youtube, .fa-instagram {
+    color: #828282;
+    height: 40px;
+    width: 40px;
 }
+
 .footer-links {
-  display: flex;
-  flex: 0.8;
-  justify-content: space-between;
-  min-width: 400px;
-  position: relative;
-  right: 2%;
+    display: flex;
+    flex: 0.8;
+    justify-content: space-between;
+    min-width: 400px;
+    position: relative;
+    right: 2%;
 }
+
 .footer-links h4 {
-  margin-bottom: 20px;
-  font-weight: 600;
-}
-.footer-links button {
-  display: block;
-  margin-bottom: -20px;
-  padding: 8px 5px;
-  background: none;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  text-align: left;
-  width: 100%;
+    margin-bottom: 20px;
+    font-weight: 600;
 }
 
+.footer-links a {
+    display: block;
+    margin-bottom: -20px;
+    padding: 8px 5px;
+    background: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    text-decoration: none;
+    color: inherit;
+    font-size: 14px;         
+    font-family: inherit;
+    line-height: 1.5;
+}
 
-
-
-
-
-#page-content {
-  top: 600px;
-  position:relative
+.footer-links a:hover {
+    background-color: rgba(0, 0, 0, 0.05); 
 }

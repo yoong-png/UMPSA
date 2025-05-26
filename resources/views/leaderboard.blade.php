@@ -1,56 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LemonAid Study</title>
-    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/leaderboard.css') }}">
-    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
-    <script src="https://kit.fontawesome.com/b1e4b09c02.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LemonAid Study</title>
+  <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/leaderboard.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/b1e4b09c02.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <header>
-      <div id="navbar">
-      <div class="a1"> 
-          <a href="{{ route('dashboard') }}" class="button-link">LemonAid Study</a>
+  <header>
+    <div id="navbar">
+      <div class="a1">
+        <a href="{{ route('dashboard') }}" class="button-link">LemonAid Study</a>
       </div>
-
       <div class="a2">
-          <a href="{{ route('leaderboard') }}" class="button-link">Leaderboard |</a>
-          <a href="{{ route('weekly.challenge') }}" class="button-link"> Weekly Challenge </a>
-          <a href="{{ route('rewards') }}" class="button-link">| Rewards</a>
+        <a href="{{ route('leaderboard') }}" class="button-link">Leaderboard |</a>
+        <a href="{{ route('weekly.challenge') }}" class="button-link">Weekly Challenge</a>
+        <a href="{{ route('rewards') }}" class="button-link">| Rewards</a>
       </div>
-
       <div class="a3">
-          <a href="{{ route('study.space') }}" class="button-link">LemonAid Study Space</a>
+        <a href="{{ route('study.space') }}" class="button-link">LemonAid Study Space</a>
       </div>
-      </div>
-    </header>
+    </div>
+  </header>
 
   <main>
-      <section class="hero">
-          <h1>Are you standing out?</h1>
-          <p>Fight for glory. Earn your place.</p>
+    @if (session('success') || session('error'))
+      <div class="alert-popup {{ session('success') ? 'success' : 'error' }}">
+          {{ session('success') ?? session('error') }}
+      </div>
+    @endif
 
-          <!-- Podium container for top 3 -->
-          <div class="podium"></div>
+    <section class="hero">
+      <h1>Are you standing out?</h1>
+      <p>Fight for glory. Earn your place.</p>
 
-          <div class="tabs">
-              <button class="active">Group</button>
-              <button>School</button>
-              <button>Region</button>
+      @if(Auth::check() && Auth::user()->group_id === null)
+        <section class="group-banner">
+          <p>You’re not in a group yet. Team up with two friends and start competing!</p>
+          <button onclick="document.getElementById('createGroupModal').style.display='block'" class="group-btn">
+            ➕ Create a Group
+          </button>
+
+          <div id="createGroupModal" class="group-modal">
+            <div class="group-modal-content">
+              <span onclick="document.getElementById('createGroupModal').style.display='none'" class="group-close">&times;</span>
+              <form method="POST" action="{{ route('groups.create') }}">
+                @csrf
+                <h3>Create Your Group</h3>
+                <p>Invite two friends by their login email addresses</p>
+
+                <label for="friend1_email">Friend 1 Email:</label><br>
+                <input type="email" name="friend1_email" required><br><br>
+
+                <label for="friend2_email">Friend 2 Email:</label><br>
+                <input type="email" name="friend2_email" required><br><br>
+
+                <button type="submit">Submit</button>
+              </form>
+            </div>
           </div>
+        </section>
+      @endif
 
-          <!-- Leaderboard container for ranks 4 and below -->
-          <div class="leaderboard"></div>
-      </section>
+
+      <div class="tabs">
+        <button class="active" onclick="switchLeaderboard(this, 'individual')">All Users</button>
+        <button onclick="switchLeaderboard(this, 'group')">Groups</button>
+        <button> Schools</button>
+      </div>
+
+
+      <div class="podium"></div>
+      <div class="leaderboard"></div>
+    </section>
   </main>
 
-
-    <img src="images/Hill.png" alt="Hill" class="form-bg-image" />
-
-
+  <img src="images/Hill.png" alt="Hill" class="form-bg-image" />
 
 <footer class="site-footer">
    <div class="footer-top">
@@ -64,93 +93,118 @@
        </div>
        </div>
        <div class="footer-links">
-       <div>
-           <h4>Forum</h4>
-           <a href="{{ route('discuss') }}">
-               <button>Discussion Forum</button>
-           </a><br>
-           <a href="{{ route('info') }}">
-               <button>Information Forum</button>
-           </a><br>
-       </div>
-       <div>
-           <h4>Study with Friends</h4>
-           <a href="{{ route('study.space') }}">
-               <button>Your Friends</button>
-           </a><br>
-           <button>Public Space</button>
-       </div>
-       <div>
-           <h4>Study materials</h4>
-           <button>Textbooks</button><br>
-           <a href="{{ route('note') }}">
-               <button>Chapter Notes</button>
-           </a><br>
-           <a href="{{ route('quiz') }}">
-               <button style="text-decoration: underline;">Quiz</button>
-           </a><br>
-       </div>
+          <div>
+            <h4>Forum</h4>
+            <a href="{{ route('discuss') }}" class="footer-button">Discussion Forum</a><br>
+            <a href="{{ route('info') }}" class="footer-button">Information Forum</a><br>
+          </div>
+          <div>
+            <h4>Study with Friends</h4>
+            <a href="{{ route('study.space') }}" class="footer-button">Your Friends</a><br>
+            <a href="#" class="footer-button">Public Space</a><br>
+          </div>
+          <div>
+            <h4>Study Materials</h4>
+            <a href="#" class="footer-button">Textbooks</a><br>
+            <a href="{{ route('note') }}" class="footer-button">Chapter Notes</a><br>
+            <a href="{{ route('quiz') }}" class="footer-button underline">Quiz</a><br>
+          </div>
+        </div>
+
        </div>
     </div>
 </footer>
 
-<script>
-  async function fetchLeaderboard() {
-    try {
-      const response = await fetch('/api/leaderboard');
-      const users = await response.json();
+  <script>
+    const currentUserEmail = "{{ Auth::check() ? Auth::user()->email : '' }}";
+    const currentUserGroup = "{{ Auth::check() ? Auth::user()->group_id : '' }}";
 
+
+    function switchLeaderboard(button, mode) {
+      document.querySelectorAll('.tabs button').forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+
+      if (mode === 'individual') {
+        fetchUserLeaderboard();
+      } else if (mode === 'group') {
+        fetchGroupLeaderboard();
+      }
+    }
+
+    async function fetchUserLeaderboard() {
+      try {
+        const response = await fetch('/api/leaderboard');
+        const users = await response.json();
+        renderLeaderboard(users, true);
+      } catch (error) {
+        showError();
+      }
+    }
+
+    async function fetchGroupLeaderboard() {
+      try {
+        const response = await fetch('/api/leaderboard-groups');
+        const groups = await response.json();
+        renderLeaderboard(groups, false);
+      } catch (error) {
+        showError();
+      }
+    }
+
+    function renderLeaderboard(data, isIndividual) {
       const podium = document.querySelector('.podium');
       const leaderboard = document.querySelector('.leaderboard');
-
       podium.innerHTML = '';
       leaderboard.innerHTML = '';
 
-      if (!Array.isArray(users) || users.length === 0) {
+      if (!Array.isArray(data) || data.length === 0) {
         leaderboard.innerHTML = '<div class="rank">No leaderboard data found.</div>';
         return;
       }
-      
+
       const positions = ['first', 'second', 'third'];
-      users.sort((a, b) => b.points - a.points);
-      users.forEach((user, index) => {
-        user.rank = index + 1;
+
+      data.forEach((item, index) => {
+        item.rank = index + 1;
       });
 
-      users.slice(0, 3).forEach((user, i) => {
-        const entry = document.createElement('div');
-        entry.classList.add('entry');
-        if (positions[i]) entry.classList.add(positions[i]);
-        entry.innerHTML = `
-          <div class="position">${user.rank}</div>
-          <div class="name">${user.name}</div>
-          <div class="points">${user.points} pts</div>
+      data.slice(0, 3).forEach((entry, i) => {
+        const div = document.createElement('div');
+        div.className = 'entry ' + positions[i];
+        div.innerHTML = `
+          <div class="position">${entry.rank}</div>
+          <div class="name">${isIndividual ? entry.name : 'Group ' + entry.group_id}</div>
+          <div class="points">${entry.points} pts</div>
         `;
-        podium.appendChild(entry);
+        podium.appendChild(div);
       });
 
-      const currentUserEmail = "{{ Auth::check() ? Auth::user()->email : '' }}";
-
-      users.slice(3).forEach((user) => {
+      data.slice(3).forEach(entry => {
         const div = document.createElement('div');
         div.className = 'rank';
 
-        if (user.email === currentUserEmail) {
+        if (
+          (isIndividual && entry.email === currentUserEmail) ||
+          (!isIndividual && entry.group_id == currentUserGroup)
+        ) {
           div.classList.add('highlighted');
         }
 
-        div.textContent = `${user.rank}. ${user.name} (${user.points} pts)`;
+        div.textContent = isIndividual
+          ? `${entry.rank}. ${entry.name} (${entry.points} pts)`
+          : `${entry.rank}. Group ${entry.group_id} (${entry.points} pts)`;
+
         leaderboard.appendChild(div);
       });
 
-    } catch (error) {
-      console.error('❌ Failed to fetch leaderboard:', error);
+    }
+
+    function showError() {
       const leaderboard = document.querySelector('.leaderboard');
       leaderboard.innerHTML = '<div class="rank">Error loading leaderboard.</div>';
     }
-  }
-  fetchLeaderboard();
-</script>
+    fetchUserLeaderboard();
+  </script>
 
 </body>
 </html>

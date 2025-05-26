@@ -18,6 +18,7 @@ return array(
     'App\\Http\\Controllers\\NoteController' => $baseDir . '/app/Http/Controllers/NoteController.php',
     'App\\Http\\Controllers\\QuizController' => $baseDir . '/app/Http/Controllers/QuizController.php',
     'App\\Http\\Controllers\\RewardsController' => $baseDir . '/app/Http/Controllers/RewardsController.php',
+    'App\\Http\\Controllers\\SignupController' => $baseDir . '/app/Http/Controllers/SignupController.php',
     'App\\Http\\Controllers\\StudySpaceController' => $baseDir . '/app/Http/Controllers/StudySpaceController.php',
     'App\\Models\\Call' => $baseDir . '/app/Models/Call.php',
     'App\\Models\\CallInvite' => $baseDir . '/app/Models/CallInvite.php',

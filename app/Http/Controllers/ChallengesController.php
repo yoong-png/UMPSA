@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\ChallengesSubmission;
 
 class ChallengesController extends Controller
 {
@@ -28,30 +29,14 @@ class ChallengesController extends Controller
         'answer' => 'required|string',
     ]);
 
-    $correctAnswers = [
-        1 => '123',
-    ];
 
     $challengeId = $request->challenge_id;
     $givenAnswer = trim(strtolower($request->answer));
 
-    if (!isset($correctAnswers[$challengeId])) {
-        return response()->json(['error' => 'Invalid challenge ID'], 400);
+
+    return response()->json([
+        'message' => 'The Admins are checking your answer! Give them some time...',
+    ]);
     }
-
-    $correctAnswer = strtolower($correctAnswers[$challengeId]);
-
-    if ($givenAnswer === $correctAnswer) {
-        $user->points += 5;
-        $user->save();
-
-        return response()->json([
-            'message' => 'Correct! You have earned 5 points!',
-            'current_points' => $user->points
-        ]);
-    } else {
-        return response()->json(['message' => 'Incorrect answer.'], 200);
-    }
-}
 
 }

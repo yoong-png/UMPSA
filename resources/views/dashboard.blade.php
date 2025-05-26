@@ -36,7 +36,8 @@
 
           <div class="points-container">
             <img src="images/lemonaidpointcounter.png" alt="points" class="form-bg-image" />
-            <div class="points-text">345</div>
+            <div class="points-text">{{ $user->points }}</div>
+
           </div>
         </section>
 
@@ -58,15 +59,15 @@
         <section class="section-center">
           <img src="images/Flower.png" alt="Flower decoration" class="flower" />
           <img src="images/lemonaidstand.png" alt="stand" class="stand" />
-            <h2>Leong Qiao Yi</h2>
-            <p>Group: SunTan</p>
-            <p>Group Points: 520</p>
+          <h2>{{ $user->name }}</h2>
+          <p>Group: {{ $user->group_id }}</p>
+          <p>Group Points: {{ $groupPoints }}</p>
+
+
         </section>
 
         <section class="social">
           <img src="images/friendslemonaid.png" alt="friends" class="friends" />
-          <img src="images/ppllemonaid.png" alt="Flower decoration" class="stand" />
-          <img src="images/randomslemonaid.png" alt="Flower decoration" class="stand" />
         </section>
     </main>
 
@@ -100,6 +101,10 @@
           </div>
         </div>
 
+        <form action="{{ route('logout') }}" method="POST">
+      @csrf
+      <button type="submit" class="logoutbtn">Log Out</button>
+      </form>
        </div>
     </div>
 </footer>

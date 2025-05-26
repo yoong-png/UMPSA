@@ -82,7 +82,7 @@
     })
     .then(response => {
         document.getElementById('responseMessage').textContent = response.message;
-
+        
         if (response.redirect_url) {
             window.location.href = response.redirect_url;
         }

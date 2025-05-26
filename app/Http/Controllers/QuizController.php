@@ -48,11 +48,11 @@ class QuizController extends Controller
 
         if ($request->ajax()) {
             return response()->json([
-                'message' => 'Correct! You have earned 5 points!',
+                'message' => 'Correct! You have earned 1 point!',
                 'current_points' => $user->points
             ]);
         } else {
-            return redirect()->back()->with('message', 'Correct! You earned 5 points!');
+            return redirect()->back()->with('message', 'Correct! You earned 1 point!');
         }
     } else {
         if ($request->ajax()) {

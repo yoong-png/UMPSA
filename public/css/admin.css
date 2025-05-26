@@ -1,0 +1,218 @@
+#navbar {
+  background-color:#FFE787;
+  font-size: 20px;
+  padding: 100px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;         
+  min-height: 50px;                
+  box-sizing: border-box;
+}
+
+#navbar {
+    color: black;
+    font-size: 20px;
+}
+
+#navbar .a1 {
+    position: absolute;
+    top: 67px;
+    left: 5.54%;
+}
+
+#navbar .a2 {
+    position: absolute;
+    top: 67px;
+    right: 16%;
+}
+
+#navbar .a3 {
+    position: absolute;
+    top: 70px;
+    left: 85%;
+    font-size: 16px;
+}
+
+#navbar .button-link {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#navbar .a3 .button-link {
+    background: black;
+    border: 2px solid black;
+    border-radius: 6px;
+    padding: 10px 10px;
+    color: rgb(255, 255, 255);
+}
+
+.submission {
+    position: absolute;
+    top: 1100px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80vw;
+    max-height: 400vh;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+
+.submission table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.submission thead {
+    background-color: #f9dd6f; 
+    color: white;
+    text-align: left;
+}
+
+.submission thead th {
+    padding: 12px 20px;
+    font-weight: 600;
+    font-size: 1rem;
+    border-bottom: 2px solid #FFE787;
+}
+
+.submission tbody tr {
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.2s ease;
+}
+
+.submission tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+.submission tbody td {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    vertical-align: middle;
+}
+
+.submission form {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.submission button {
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.submission button[name="approve"][value="1"] {
+    background-color: #28a745; 
+    color: white;
+}
+
+.submission button[name="approve"][value="0"] {
+    background-color: #dc3545; 
+    color: white;
+}
+
+.submission button:hover {
+    background-color: #0056b3;
+}
+
+.submission td:last-child {
+    white-space: nowrap; 
+}
+
+.submission table th,
+.submission table td {
+    text-align: center;      
+    vertical-align: middle;   
+
+}
+.bg {
+    width: 100vw;
+    height: auto;
+}
+
+
+.site-footer {
+  background-color: #FFF3C2;
+  padding: 40px;
+  border-top: 1px solid #ccc;
+  position: relative;
+  width: 100vw;
+  margin-top: -10px;
+}
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-brand {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-brand h2 {
+    margin-bottom: 10px;
+}
+
+.social-icons a {
+    position: relative;
+    top: 60px;
+    margin-right: 10px;
+}
+
+.fa-facebook, .fa-linkedin, .fa-youtube, .fa-instagram {
+    color: #828282;
+    height: 40px;
+    width: 40px;
+}
+
+.footer-links {
+    display: flex;
+    flex: 0.8;
+    justify-content: space-between;
+    min-width: 400px;
+    position: relative;
+    right: 2%;
+}
+
+.footer-links h4 {
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.footer-links a {
+    display: block;
+    margin-bottom: -20px;
+    padding: 8px 5px;
+    background: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    text-decoration: none;
+    color: inherit;
+    font-size: 14px;        
+    font-family: inherit;
+    line-height: 1.5;
+}
+
+.footer-links a:hover {
+    background-color: rgba(0, 0, 0, 0.05); 
+}

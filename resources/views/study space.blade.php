@@ -1,65 +1,108 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LemonAid Study Space</title>
+  <link rel="stylesheet" href="/css/studyspace.css">
+  <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/b1e4b09c02.js" crossorigin="anonymous"></script>
+</head>
 
-@section('content')
+<header>
+      <div id="navbar">
+      <div class="a1"> 
+          <a href="{{ route('dashboard') }}" class="button-link">LemonAid Study</a>
+      </div>
+
+      <div class="a2">
+          <a href="{{ route('leaderboard') }}" class="button-link">Leaderboard |</a>
+          <a href="{{ route('weekly.challenge') }}" class="button-link"> Weekly Challenge </a>
+          <a href="{{ route('rewards') }}" class="button-link">| Rewards</a>
+      </div>
+
+      <div class="a3">
+          <a href="{{ route('study.space') }}" class="button-link">LemonAid Study Space</a>
+      </div>
+      </div>
+</header>
+
+<body>
+
 <div class="vc-container">
 
   <div class="vc-top">
-    @foreach ($participants->where('id', '!=', $user->id)->take(4) as $participant)
-      <div class="lemonade-stand">
-        <div class="vc-box">{{ $participant->name }}</div>
-      </div>
-    @endforeach
-
-    {{-- Fill empty slots if less than 4 --}}
-    @for ($i = $participants->count() - ($participants->contains($user->id) ? 1 : 0); $i < 4; $i++)
-      <div class="lemonade-stand-wrapper">
-  <img src="{{ asset('images/lemonaidstand.png') }}" alt="Lemonade Stand" class="lemonade-image">
-  <div class="vc-box-content">Alice</div>
-    @endfor
+    <div class="lemonade-stand">
+      <div class="vc-box">QY</div>
+    </div>
+    <div class="lemonade-stand">
+      <div class="vc-box">JADE</div>
+    </div>
+    <div class="lemonade-stand">
+      <div class="vc-box">User 3</div>
+    </div>
+    <div class="lemonade-stand">
+      <div class="vc-box">User 4</div>
+    </div>
   </div>
 
   <div class="vc-center">
-    {{-- No timer as per your latest instructions --}}
   </div>
 
   <div class="vc-bottom">
-    <div class="vc-box user-box">{{ $user->name }}</div>
+    <div class="vc-box user-box">You </div>
     <div class="drink-overlay"></div>
   </div>
 
   <div class="vc-controls">
 
-    @if (!$inVC)
-      <form method="POST" action="{{ route('vc-room.join') }}" style="display:inline;">
-        @csrf
-        <button type="submit">Join VC</button>
-      </form>
-    @else
-      <form method="POST" action="{{ route('vc-room.leave') }}" style="display:inline;">
-        @csrf
-        <button type="submit">Leave VC</button>
-      </form>
-    @endif
+    <form method="POST" action="/vc-room/leave" style="display:inline;">
+      <a href="/dashboard" class="leavebutton">Leave VC</a>
+    </form>
 
-    <form method="POST" action="{{ route('vc-room.invite') }}" style="display:inline; margin-left: 10px;">
-      @csrf
+    <form method="POST" action="/studyspace" style="display:inline; margin-left: 10px;">
       <input type="email" name="email" placeholder="Invite email" required />
       <button type="submit">Invite</button>
     </form>
+
   </div>
-
-  {{-- Flash messages --}}
-  @if(session('success'))
-    <div class="alert success">{{ session('success') }}</div>
-  @endif
-
-  @if(session('error'))
-    <div class="alert error">{{ session('error') }}</div>
-  @endif
+  <div class="alert success" style="display:none;">Success message</div>
+  <div class="alert error" style="display:none;">Error message</div>
 
 </div>
-@endsection
 
-@section('styles')
-<link rel="stylesheet" href="{{ asset('css/studyspace.css') }}">
-@endsection
+</body>
+<footer class="site-footer">
+   <div class="footer-top">
+      <div class="footer-brand">
+       <h2>LemonAid Study</h2>
+       <div class="social-icons">
+           <a href="#"><i class="fa-brands fa-facebook"></i></a>
+           <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+           <a href="#"><i class="fa-brands fa-youtube"></i></a>
+           <a href="#"><i class="fa-brands fa-instagram"></i></a>
+       </div>
+       </div>
+       <div class="footer-links">
+          <div>
+            <h4>Forum</h4>
+            <a href="{{ route('discuss') }}" class="footer-button">Discussion Forum</a><br>
+            <a href="{{ route('info') }}" class="footer-button">Information Forum</a><br>
+          </div>
+          <div>
+            <h4>Study with Friends</h4>
+            <a href="{{ route('study.space') }}" class="footer-button">Your Friends</a><br>
+            <a href="#" class="footer-button">Public Space</a><br>
+          </div>
+          <div>
+            <h4>Study Materials</h4>
+            <a href="#" class="footer-button">Textbooks</a><br>
+            <a href="{{ route('note') }}" class="footer-button">Chapter Notes</a><br>
+            <a href="{{ route('quiz') }}" class="footer-button underline">Quiz</a><br>
+          </div>
+        </div>
+
+       </div>
+    </div>
+</footer>
+</html>

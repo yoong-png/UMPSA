@@ -32,7 +32,6 @@ body {
     font-size: 16px;
 }
 
-/* Style all the <a> tags to match buttons */
 #navbar .button-link {
     background: none;
     border: none;
@@ -43,7 +42,6 @@ body {
     cursor: pointer;
 }
 
-/* Special styling for the button in .a3 */
 #navbar .a3 .button-link {
     background: black;
     border: 2px solid black;
@@ -56,7 +54,7 @@ body {
     margin-top: 200px;
     margin-left: 5%;
     text-align: left;
-    padding: 64px 16px; /* 4rem = 64px, 1rem = 16px */
+    padding: 64px 16px; 
     background-color: none;
     position: relative;
 }
@@ -68,13 +66,13 @@ body {
 
 .hero p {
     font-size: 20px;
-    font-weight: normal; /* example: make them not bold */
+    font-weight: normal; 
 }
 
 .points-container {
     position: absolute;
-    top: 60px;       /* Adjust as needed */
-    left: 65%;       /* Adjust as needed */
+    top: 60px;      
+    left: 65%;       
     width: 300px;
     height: auto;
     display: flex;
@@ -107,7 +105,7 @@ body {
     align-items: center;
     background-color: #FFEC8D;
     width: 90%;
-    margin: 0 auto; /* ← This centers it horizontally */
+    margin: 0 auto; 
     border-radius: 16px;
 }
 
@@ -117,22 +115,21 @@ body {
     gap: 50px;
     overflow-x: auto;
     padding: 16px;
-    margin: 0 auto;          /* Center horizontally */
-    max-width: 100%;       /* Limit width to center contents */
+    margin: 0 auto;        
+    max-width: 100%;       
 }
 
-/* Hide scrollbar across browsers */
 .grid::-webkit-scrollbar {
     display: none;
 }
 .grid {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;     /* Firefox */
+    -ms-overflow-style: none;  
+    scrollbar-width: none;     
 }
 
 .card {
-    min-width: 150px; /* Force width for each card */
-    flex: 0 0 auto;    /* Prevent shrinking or growing */
+    min-width: 150px; 
+    flex: 0 0 auto;   
     background-color: #ffcc00;
     padding: 16px;
     border-radius: 10px;
@@ -148,12 +145,12 @@ body {
 
 .section-center {
     text-align: center;
-    padding: 32px 16px; /* 2rem = 32px, 1rem = 16px */
+    padding: 32px 16px; 
 }
 
 .section-center .flower {
     position: absolute;
-    top: 80%; /* or wherever you want it vertically */
+    top: 80%; 
     left: 50%;
     transform: translateX(-50%);
     width: 80%;
@@ -164,7 +161,7 @@ body {
 
 .section-center .stand {
     position: relative;
-    top: 400px; /* or wherever you want it vertically */
+    top: 400px; 
     margin: 0 auto;
     width: 30%;
     height: auto;
@@ -188,17 +185,9 @@ body {
 
 .social {
     margin-top: 700px;
-    display: flex;
-    justify-content: center; /* Center items horizontally */
-    align-items: center;     /* Align items vertically if needed */
-    gap: 16px;               /* Space between images */
-    padding: 24px;           /* Optional: add some spacing around */
-    flex-wrap: wrap;         /* Optional: wrap on small screens */
-}
-
-.social img {
-    max-width: 500px;        /* Limit image size */
-    height: auto;
+    width: 70vw;
+    margin-left: 11%;
+    margin-right: 11%;
 }
 
 .site-footer {
@@ -262,11 +251,31 @@ body {
     width: 100%;
     text-decoration: none;
     color: inherit;
-    font-size: 14px;         /* Adjust as needed */
+    font-size: 14px;         
     font-family: inherit;
     line-height: 1.5;
 }
 
 .footer-links a:hover {
-    background-color: rgba(0, 0, 0, 0.05); /* optional hover effect */
+    background-color: rgba(0, 0, 0, 0.05); 
+}
+
+.logoutbtn {
+  background-color: #CE2724;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+  display: inline-block;
+  position: absolute;
+  top: 92px;
+    left: 40px;
+}
+
+.logoutbtn:hover {
+  background-color: #a31e1c;
 }

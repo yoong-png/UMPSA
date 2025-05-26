@@ -44,7 +44,7 @@
             <input type="password" id="password_confirmation" name="password_confirmation" placeholder="Confirm Password" required />
         </div>
 
-        <a href="{{ route('login') }}" class="button-link">Submit</a>
+        <button type="submit" class="button-link">Submit</button>
     </form>
 
     <div
@@ -69,11 +69,10 @@
             _token: '{{ csrf_token() }}'
         };
 
-        // Clear previous messages
         document.getElementById('responseMessage').textContent = '';
         document.getElementById('errorMessage').textContent = '';
 
-        fetch('/api/signup', {
+        fetch('/signup', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -84,7 +83,6 @@
         })
         .then(async (res) => {
             if (!res.ok) {
-                // Try to parse validation errors
                 const errData = await res.json();
                 if (errData.errors) {
                     const errors = Object.values(errData.errors).flat();
@@ -99,8 +97,10 @@
         })
         .then(response => {
             document.getElementById('responseMessage').textContent = response.message;
-            // Optionally clear the form
             document.getElementById('signupForm').reset();
+            setTimeout(() => {
+            window.location.href = response.redirect_url;
+            }, 2000);
         })
         .catch(error => {
             document.getElementById('errorMessage').textContent = error.message;

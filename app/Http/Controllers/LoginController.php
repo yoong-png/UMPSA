@@ -20,13 +20,27 @@ class LoginController extends Controller
         'password' => ['required'],
     ]);
 
-    if (Auth::attempt($credentials)) {
-        $request->session()->regenerate();
+    /** @var \App\Models\User $user */
+    $user = Auth::user(); 
 
-        return response()->json([
-            'message' => 'Login successful',
-            'redirect_url' => route('dashboard')
-        ]);
+   if (Auth::attempt($credentials)) {
+    $request->session()->regenerate();
+
+    $user = Auth::user();
+
+    // Check role *after* successful login
+    if (isset($user->role) && $user->role === 'teacher') {
+        $redirectUrl = route('admin.dashboard'); // redirect teachers to admin
+    } else {
+        $redirectUrl = route('dashboard'); // others to dashboard
+    }
+
+    return response()->json([
+    'message' => 'Login successful. Role: ' . $user->role,
+    'redirect_url' => $redirectUrl,
+    ]);
+
+
     }
 
     return response()->json([
