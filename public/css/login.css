@@ -44,7 +44,7 @@ h2{
   text-align: center;
 }
 
-#loginForm #register button {
+#loginForm .button-link {
     width: 70px;
     padding: 5px 10px;
     font-size: 12px;
@@ -54,6 +54,7 @@ h2{
     border: none;
     cursor: pointer;
     margin: auto;
+    text-decoration: none;
 }
 
 
@@ -110,14 +111,7 @@ form#loginForm button {
     margin-top: 15px;
 }
 
-.button-link {
-    background: rgba(0, 0, 0, 0.459);
-    text-decoration: none;
-    color: white;
-    cursor: pointer;
-    padding: 0;
-    border-radius: 2px;
-}
+
 
 form#loginForm button:hover {
     background-color: #3b3229;
