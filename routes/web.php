@@ -14,7 +14,6 @@ use App\Http\Controllers\RewardsController;
 use App\Http\Controllers\ChallengesController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SSController;
-use App\Http\Controllers\StudySpaceController;
 use App\Http\Controllers\NoteController;
 use App\Http\Controllers\InfoController;
 use App\Http\Controllers\DiscussController;

@@ -11,7 +11,6 @@ class SSController extends Controller
     {
         $user = Auth::user();
 
-        // Assuming your User model has a 'calls' relationship
         $currentCall = $user->calls()->latest()->first();
 
         $inVC = $currentCall !== null;
