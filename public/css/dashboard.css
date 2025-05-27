@@ -116,15 +116,23 @@ body {
     overflow-x: auto;
     padding: 16px;
     margin: 0 auto;        
-    max-width: 100%;       
+    max-width: 100%; 
+    -ms-overflow-style: none;  
+    scrollbar-width: none;        
 }
 
 .grid::-webkit-scrollbar {
     display: none;
 }
-.grid {
-    -ms-overflow-style: none;  
-    scrollbar-width: none;     
+
+.grid a {
+  text-decoration: none;
+  color: inherit; 
+  display: block; 
+}
+
+.grid a:hover {
+  text-decoration: none;
 }
 
 .card {
@@ -136,10 +144,12 @@ body {
     font-weight: 600;
     text-align: center;
     transition: background-color 0.2s;
+    text-decoration:none;
 }
 
 .card:hover {
     background-color: #f2b800;
+    text-decoration:none;
 }
 
 

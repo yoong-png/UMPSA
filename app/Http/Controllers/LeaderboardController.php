@@ -53,4 +53,11 @@ class LeaderboardController extends Controller
 
         return response()->json($groups);
     }
+
+    public function schoolTotals()
+    {
+        // Currently, no school data, so return an empty JSON array
+        return response()->json([]);
+    }
+
 }

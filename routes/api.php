@@ -95,3 +95,4 @@ Route::middleware('auth:sanctum')->group(function () {
 Route::get('/leaderboard', [LeaderboardController::class, 'allUsers']);
 Route::get('/leaderboard/{group}', [LeaderboardController::class, 'groupUsers']);
 Route::get('/leaderboard-groups', [LeaderboardController::class, 'groupTotals']);
+Route::get('/leaderboard-schools', [LeaderboardController::class, 'schoolTotals']);

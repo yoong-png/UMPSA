@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LemonAid Study</title>
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/note.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/previousans.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/b1e4b09c02.js" crossorigin="anonymous"></script>
 </head>
@@ -31,13 +31,50 @@
 
 <main>
 
+<div class="submission">
+    <h2 class="submission-title">Your Previous Answers</h2>    <table>
+        <thead>
+            <tr>
+                <th class="answer">Answer</th>
+                <th class="status">Status</th>
+                <th class="submitted">Submitted At</th>
+            </tr>
+        </thead>
+        <tbody>
+            @forelse ($submissions as $submission)
+                <tr>
+                    <td class="answer">{{ $submission->answer }}</td>
+                    <td class="status">
+                        @if (is_null($submission->is_correct))
+                            Pending
+                        @elseif ($submission->is_correct)
+                            Correct
+                        @else
+                            Incorrect
+                        @endif
+                    </td>
+                    <td class="submitted">{{ $submission->created_at->format('Y-m-d H:i') }}</td>
+                </tr>
+            @empty
+                <tr>
+                    <td colspan="3">You haven't submitted any answers yet.</td>
+                </tr>
+            @endforelse
+        </tbody>
+    </table>
+</div>
+
+<div class = "title">
 <section>
     <img src="{{ asset('images/prevansTitle.png') }}" alt="PREVnotes" class="note">
 </section>
+</div>
 
+<div class = "image">
 <section>
     <img src="{{ asset('images/prevAns.png') }}" alt="PREVnotes" class="note">
 </section>
+</div>
 
 <footer class="site-footer">
    <div class="footer-top">

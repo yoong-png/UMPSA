@@ -4,6 +4,7 @@ body {
     color: #333;
 }
 
+
 #navbar {
     color: black;
     font-size: 20px;
@@ -46,13 +47,40 @@ body {
     color: white;
 }
 
-.head {
+/* Header Image & Button */
+.head-wrapper {
     position: relative;
-    margin-top: 164px;
     width: 100vw;
-    height: auto;
+    margin-top: 164px;
 }
 
+.head-wrapper .head {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.head-wrapper .buy-btn {
+    position: absolute;
+    top: 68%; /* Adjust vertically */
+    right: 6vw; /* Adjust horizontally */
+    transform: translateY(-50%);
+    padding: 12px 24px;
+    width: 35vw;
+    min-width: 100px;
+    max-width: 1000px;
+    height: auto;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    text-align: center;
+    display: inline-block;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Body Image */
 .body {
     position: relative;
     display: block;
@@ -61,8 +89,49 @@ body {
     height: auto;
 }
 
+/* Popup */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 999;
+}
+
+.popup:target {
+    display: flex;
+}
+
+.popup-content {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.popup-content p {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #27ae60;
+}
+
+.close-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #27ae60;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+/* Footer */
 .site-footer {
-    background-color: none;
     padding: 40px;
     border-top: 1px solid #ccc;
     position: relative;

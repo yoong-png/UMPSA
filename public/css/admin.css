@@ -57,7 +57,7 @@
     left: 50%;
     transform: translateX(-50%);
     width: 80vw;
-    max-height: 400vh;
+    max-height: 60%;
     overflow-y: auto;
     overflow-x: auto;
 }
@@ -215,4 +215,24 @@
 
 .footer-links a:hover {
     background-color: rgba(0, 0, 0, 0.05); 
+}
+
+.logoutbtn {
+  background-color: #CE2724;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+  display: inline-block;
+  position: relative;
+  top: 0px;
+    left: 0px;
+}
+
+.logoutbtn:hover {
+  background-color: #a31e1c;
 }

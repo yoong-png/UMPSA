@@ -1,3 +1,9 @@
+body {
+  background-color: #f8f0cd; 
+  margin: 0; 
+}
+
+
 #navbar {
     color: black;
     font-size: 20px;
@@ -22,7 +28,6 @@
     font-size: 16px;
 }
 
-/* Style all the <a> tags to match buttons */
 #navbar .button-link {
     background: none;
     border: none;
@@ -33,7 +38,6 @@
     cursor: pointer;
 }
 
-/* Special styling for the button in .a3 */
 #navbar .a3 .button-link {
     background: black;
     border: 2px solid black;
@@ -42,10 +46,38 @@
     color: white;
 }
 
+#b1 {
+  background: none;
+  color: #333;
+  padding: 20px 40px;
+  text-align: center;
+  position: relative;
+  top: 150px;
+  z-index: 10;
+}
+
+.note {
+    display: block;
+    position: relative;
+    margin: 50px auto 0 auto; 
+    width: 75vw;
+    height: auto;
+    border-radius: 16px;
+}
+
+.image {
+    display: block;
+    position: relative;
+    margin: 0px auto 0 auto; 
+    width: 75vw;
+    height: auto;
+    border-radius: 16px;
+}
+
 .site-footer {
-    background-color: #ffffff;
+    background-color: none;
     padding: 40px;
-    border-top: transparent;
+    border-top: 1px solid #ccc;
     position: relative;
     top: 100px;
 }
@@ -103,12 +135,104 @@
     width: 100%;
     text-decoration: none;
     color: inherit;
-    font-size: 14px;        
+    font-size: 14px;         
     font-family: inherit;
     line-height: 1.5;
 }
 
 .footer-links a:hover {
-    background-color: rgba(0, 0, 0, 0.05); /* hover effect */
+    background-color: rgba(0, 0, 0, 0.05); 
 }
 
+.submission {
+    position: relative;
+    margin-top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80vw;
+    max-height: 60vh;
+    overflow-y: auto;
+    overflow-x: auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 10px;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.submission-title {
+    margin: 0 0 15px 0;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #333;
+    width: 100%;
+}
+
+.submission table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px; 
+    border-radius: 8px;
+    overflow: hidden;
+    table-layout: fixed; 
+}
+
+.submission thead th:nth-child(1) {
+    width: 60%;
+    text-align: left;
+}
+
+.submission thead th:nth-child(2),
+.submission thead th:nth-child(3) {
+    width: 20%;
+    text-align: center;
+}
+
+.submission tbody td:nth-child(1) {
+    text-align: left;
+    word-wrap: break-word;
+}
+
+.submission tbody td:nth-child(2),
+.submission tbody td:nth-child(3) {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.submission thead {
+    background-color: #f9dd6f; 
+    color: #333;
+    text-align: center;
+}
+
+.submission thead th {
+    padding: 12px 20px;
+    font-weight: 600;
+    font-size: 1rem;
+    border-bottom: 2px solid #FFE787;
+}
+
+.submission tbody tr {
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.2s ease;
+    cursor: default;
+}
+
+.submission tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+.submission tbody td {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    vertical-align: middle;
+}
+
+.submission {
+    overflow-y: auto;
+    overflow-x: auto;
+}

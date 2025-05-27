@@ -79,13 +79,15 @@
         <img src="images/admindash.png" alt="bg" class="bg" />
     </section>
 
-
-
-
+  
     <footer class="site-footer">
       <div class="footer-top">
           <div class="footer-brand">
           <h2>LemonAid Study</h2>
+          <form action="{{ route('logout') }}" method="POST">
+            @csrf
+            <button type="submit" class="logoutbtn">Log Out</button>
+            </form>
           <div class="social-icons">
               <a href="#"><i class="fa-brands fa-facebook"></i></a>
               <a href="#"><i class="fa-brands fa-linkedin"></i></a>
@@ -112,6 +114,8 @@
               </div>
             </div>
 
+            
+      
           </div>
         </div>
     </footer>

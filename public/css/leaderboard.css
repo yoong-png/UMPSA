@@ -169,6 +169,35 @@ body {
     z-index: -1;
 }
 
+.leaderboard {
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 1rem;
+  border-radius: 8px;
+  background: none;
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.leaderboard::-webkit-scrollbar {
+  width: 8px;
+}
+
+.leaderboard::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.leaderboard::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.leaderboard::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 .site-footer {
     background-color: #71AD66;
     padding: 40px;

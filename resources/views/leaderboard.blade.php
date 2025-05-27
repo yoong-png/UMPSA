@@ -70,7 +70,7 @@
       <div class="tabs">
         <button class="active" onclick="switchLeaderboard(this, 'individual')">All Users</button>
         <button onclick="switchLeaderboard(this, 'group')">Groups</button>
-        <button> Schools</button>
+        <button onclick="switchLeaderboard(this, 'school')">Schools</button>
       </div>
 
 
@@ -115,96 +115,121 @@
     </div>
 </footer>
 
-  <script>
-    const currentUserEmail = "{{ Auth::check() ? Auth::user()->email : '' }}";
-    const currentUserGroup = "{{ Auth::check() ? Auth::user()->group_id : '' }}";
+<script>
+  const currentUserEmail = "{{ Auth::check() ? Auth::user()->email : '' }}";
+  const currentUserGroup = "{{ Auth::check() ? Auth::user()->group_id : '' }}";
 
+  function switchLeaderboard(button, mode) {
+    document.querySelectorAll('.tabs button').forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
 
-    function switchLeaderboard(button, mode) {
-      document.querySelectorAll('.tabs button').forEach(btn => btn.classList.remove('active'));
-      button.classList.add('active');
-
-      if (mode === 'individual') {
-        fetchUserLeaderboard();
-      } else if (mode === 'group') {
-        fetchGroupLeaderboard();
-      }
+    if (mode === 'individual') {
+      fetchUserLeaderboard();
+    } else if (mode === 'group') {
+      fetchGroupLeaderboard();
+    } else if (mode === 'school') {
+      fetchSchoolLeaderboard();
     }
+  }
 
-    async function fetchUserLeaderboard() {
-      try {
-        const response = await fetch('/api/leaderboard');
-        const users = await response.json();
-        renderLeaderboard(users, true);
-      } catch (error) {
-        showError();
-      }
+  async function fetchUserLeaderboard() {
+    try {
+      const response = await fetch('/api/leaderboard');
+      const users = await response.json();
+      renderLeaderboard(users, true);
+    } catch (error) {
+      showError();
     }
+  }
 
-    async function fetchGroupLeaderboard() {
-      try {
-        const response = await fetch('/api/leaderboard-groups');
-        const groups = await response.json();
-        renderLeaderboard(groups, false);
-      } catch (error) {
-        showError();
-      }
+  async function fetchGroupLeaderboard() {
+    try {
+      const response = await fetch('/api/leaderboard-groups');
+      const groups = await response.json();
+      renderLeaderboard(groups, false);
+    } catch (error) {
+      showError();
     }
+  }
 
-    function renderLeaderboard(data, isIndividual) {
+  async function fetchSchoolLeaderboard() {
+    try {
+      const response = await fetch('/api/leaderboard-schools');
+      const schools = await response.json();
+
       const podium = document.querySelector('.podium');
       const leaderboard = document.querySelector('.leaderboard');
       podium.innerHTML = '';
       leaderboard.innerHTML = '';
 
-      if (!Array.isArray(data) || data.length === 0) {
-        leaderboard.innerHTML = '<div class="rank">No leaderboard data found.</div>';
+      if (!Array.isArray(schools) || schools.length === 0) {
+        leaderboard.innerHTML = '<div class="rank">School leaderboard not available yet.</div>';
         return;
       }
 
-      const positions = ['first', 'second', 'third'];
+      // Future: Add rendering logic if school data is added later
 
-      data.forEach((item, index) => {
-        item.rank = index + 1;
-      });
-
-      data.slice(0, 3).forEach((entry, i) => {
-        const div = document.createElement('div');
-        div.className = 'entry ' + positions[i];
-        div.innerHTML = `
-          <div class="position">${entry.rank}</div>
-          <div class="name">${isIndividual ? entry.name : 'Group ' + entry.group_id}</div>
-          <div class="points">${entry.points} pts</div>
-        `;
-        podium.appendChild(div);
-      });
-
-      data.slice(3).forEach(entry => {
-        const div = document.createElement('div');
-        div.className = 'rank';
-
-        if (
-          (isIndividual && entry.email === currentUserEmail) ||
-          (!isIndividual && entry.group_id == currentUserGroup)
-        ) {
-          div.classList.add('highlighted');
-        }
-
-        div.textContent = isIndividual
-          ? `${entry.rank}. ${entry.name} (${entry.points} pts)`
-          : `${entry.rank}. Group ${entry.group_id} (${entry.points} pts)`;
-
-        leaderboard.appendChild(div);
-      });
-
-    }
-
-    function showError() {
+    } catch (error) {
       const leaderboard = document.querySelector('.leaderboard');
-      leaderboard.innerHTML = '<div class="rank">Error loading leaderboard.</div>';
+      leaderboard.innerHTML = '<div class="rank">Error loading school leaderboard.</div>';
     }
-    fetchUserLeaderboard();
-  </script>
+  }
+
+  function renderLeaderboard(data, isIndividual) {
+    const podium = document.querySelector('.podium');
+    const leaderboard = document.querySelector('.leaderboard');
+    podium.innerHTML = '';
+    leaderboard.innerHTML = '';
+
+    if (!Array.isArray(data) || data.length === 0) {
+      leaderboard.innerHTML = '<div class="rank">No leaderboard data found.</div>';
+      return;
+    }
+
+    const positions = ['first', 'second', 'third'];
+
+    data.forEach((item, index) => {
+      item.rank = index + 1;
+    });
+
+    data.slice(0, 3).forEach((entry, i) => {
+      const div = document.createElement('div');
+      div.className = 'entry ' + positions[i];
+      div.innerHTML = `
+        <div class="position">${entry.rank}</div>
+        <div class="name">${isIndividual ? entry.name : 'Group ' + entry.group_id}</div>
+        <div class="points">${entry.points} pts</div>
+      `;
+      podium.appendChild(div);
+    });
+
+    data.slice(3).forEach(entry => {
+      const div = document.createElement('div');
+      div.className = 'rank';
+
+      if (
+        (isIndividual && entry.email === currentUserEmail) ||
+        (!isIndividual && entry.group_id == currentUserGroup)
+      ) {
+        div.classList.add('highlighted');
+      }
+
+      div.textContent = isIndividual
+        ? `${entry.rank}. ${entry.name} (${entry.points} pts)`
+        : `${entry.rank}. Group ${entry.group_id} (${entry.points} pts)`;
+
+      leaderboard.appendChild(div);
+    });
+  }
+
+  function showError() {
+    const leaderboard = document.querySelector('.leaderboard');
+    leaderboard.innerHTML = '<div class="rank">Error loading leaderboard.</div>';
+  }
+
+  // Load initial leaderboard (All Users)
+  fetchUserLeaderboard();
+</script>
 
 </body>
 </html>

@@ -23,6 +23,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\ChallengeSubmissionController;
 use App\Http\Controllers\AdminChallengeSubmissionsController;
+use App\Http\Controllers\UserSubmissionsController;
 
 //Header
 Route::get('/dashboard', [DashboardController::class, 'show'])
@@ -53,7 +54,7 @@ Route::post('/logout', function (Request $request) {
     Auth::logout();
     $request->session()->invalidate();
     $request->session()->regenerateToken();
-    return redirect('/login');
+    return redirect('/');
 })->name('logout');
 
 
@@ -128,6 +129,15 @@ Route::prefix('admin')->group(function () {
 Route::get('/previous-answers', function () {
     return view('previousans');
 })->name('previous.answers');
+
+Route::post('/studyspace/invite', [SSController::class, 'invite'])->middleware('auth');
+
+Route::get('/previous-answers', [UserSubmissionsController::class, 'showUserAnswers'])
+    ->middleware('auth')
+    ->name('previous.answers');
+
+
+
 
 
 

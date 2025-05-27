@@ -30,9 +30,21 @@
     </header>
 
     <section>
-        <img src="images/rewardshead.png" alt="head" class="head" />
+        <div class="head-wrapper">
+            <img src="images/rewardshead.png" alt="head" class="head" />
+            <a href="#popup" class="buy-btn">BUY FOR 330 POINTS</a>
+        </div>
         <img src="images/rewardsbody.png" alt="body" class="body" />
     </section>
+
+    <!-- Popup HTML -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <p>Exchange Successful!</p>
+            <a href="#" class="close-btn">OK</a>
+        </div>
+    </div>
+
 
     <footer class="site-footer">
     <div class="footer-top">
